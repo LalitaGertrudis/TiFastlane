@@ -138,6 +138,7 @@ program.command('pilot [Command]')
     .option('[list]', 'Lists all registered testers, both internal and external')
     .option('[remove]', 'Remove an external tester by their email address')
     .option('-s, --skip_submission', 'Skip the distributing action of pilot and only upload the ipa file')
+    .option('--skip_waiting_for_build_processing', 'Don\'t wait for the build to process. If set to true, the changelog won\'t be set, distribute_external option won\'t work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for \'minutes used\' on your CI plan)')
 
 	.action(pilot)
     ;

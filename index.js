@@ -251,7 +251,7 @@ function uploadBetaTestIPA(opts){
         type: 'iOS'
     });
 
-    if( opts.skip_build ){
+    if( opts.skip_waiting_for_build_processing ){
 
         console.log(chalk.yellow('Skipping Appcelerator App Store Build'));
         _pilot();
@@ -1112,6 +1112,10 @@ exports.pilot = function(opts){
 
             if(opts.skip_submission){
                 pilotArgs.push('-s');
+            }
+
+            if(opts.skip_waiting_for_build_processing){
+                pilotArgs.push('--skip_waiting_for_build_processing');
             }
 
             break;
